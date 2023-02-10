@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_graph"
+    app:startDestination="@id/placeListFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="c0868747.tilak.labtest.ui.SplashFragment"
+        >
+        <action
+            android:id="@+id/action_splashFragment_to_placeListFragment"
+            app:destination="@id/placeListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/pickPlaceFragment"
+        android:name="c0868747.tilak.labtest.ui.PickPlaceFragment"
+        />
+
+    <fragment
+        android:id="@+id/placeListFragment"
+        android:name="c0868747.tilak.labtest.ui.PlacesListFragment"
+        >
+        <action
+            android:id="@+id/action_placeListFragment_to_pickPlaceFragment"
+            app:destination="@id/pickPlaceFragment" />
+    </fragment>
+
+</navigation>
