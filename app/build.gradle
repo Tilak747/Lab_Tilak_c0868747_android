@@ -1,0 +1,78 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'c0868747.tilak.labtest'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "c0868747.tilak.labtest"
+        minSdk 21
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+ext{
+    room_version = '2.5.0'
+    glide_version = '4.12.0'
+    hilt_version = '2.42'
+    navigation_version = '2.5.3'
+    okhttp_version = '4.9.0'
+    material_version = '1.8.0'
+    swipe_version = '1.1.0'
+    multidex_version = '2.0.1'
+    gson_version = '2.9.0'
+    viewPager_version = '1.0.0'
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.6.0'
+    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    //Navigation components
+    implementation("androidx.navigation:navigation-fragment:$navigation_version")
+    implementation("androidx.navigation:navigation-ui:$navigation_version")
+
+    //Room database
+    implementation("androidx.room:room-runtime:$room_version")
+    annotationProcessor("androidx.room:room-compiler:$room_version")
+    implementation("androidx.room:room-ktx:$room_version")
+
+    //Glide (Image loading)
+    implementation("com.github.bumptech.glide:glide:$glide_version")
+    annotationProcessor("com.github.bumptech.glide:compiler:$glide_version")
+
+    //Dependency Injection
+    implementation("com.google.dagger:hilt-android:$hilt_version")
+    annotationProcessor("com.google.dagger:hilt-compiler:$hilt_version")
+
+    //Swipe to Refresh
+    implementation("androidx.swiperefreshlayout:swiperefreshlayout:$swipe_version")
+
+    //Circular Image
+    implementation('com.mikhaellopez:circularimageview:4.3.0')
+
+    //GSON
+    implementation("com.google.code.gson:gson:$gson_version")
+}
