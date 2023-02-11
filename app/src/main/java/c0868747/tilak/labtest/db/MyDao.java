@@ -19,7 +19,7 @@ public interface MyDao {
 
     @Query("Select * from fav_places")
     LiveData<List<FavLocation>> getAllLocations();
-    @Query("Select * from fav_places where title == :name")
+    @Query("Select * from fav_places where description LIKE '%' || :name || '%'")
     LiveData<List<FavLocation>> getAllLocations(String name);
 
     @Delete

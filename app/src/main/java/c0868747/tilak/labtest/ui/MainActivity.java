@@ -1,10 +1,12 @@
 package c0868747.tilak.labtest.ui;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
+import androidx.navigation.NavDestination;
 import androidx.navigation.Navigation;
 
 import android.Manifest;
@@ -66,6 +68,14 @@ public class MainActivity extends AppCompatActivity {
         viewModel = new ViewModelProvider(this).get(MainViewModel.class);
 
         controller = Navigation.findNavController(this, R.id.fragContainerView);
+        controller.addOnDestinationChangedListener((navController, navDestination, bundle) -> {
+            if(navDestination.getId() == R.id.placeListFragment){
+                binding.fabAdd.setVisibility(View.VISIBLE);
+            }
+            else{
+                binding.fabAdd.setVisibility(View.INVISIBLE);
+            }
+        });
         binding.fabAdd.setOnClickListener(v -> {
             controller.navigate(R.id.action_placeListFragment_to_pickPlaceFragment);
         });
@@ -118,7 +128,11 @@ public class MainActivity extends AppCompatActivity {
             //                                          int[] grantResults)
             // to handle the case where the user grants the permission. See the documentation
             // for ActivityCompat#requestPermissions for more details.
+            checkLocationPermission();
             return;
+        }
+        if(lastLocation != null){
+            setLocation(lastLocation);
         }
         fusedLocationProviderClient.getLastLocation().addOnCompleteListener(this, task -> {
             if (task.isSuccessful() && task.getResult() != null) {
@@ -127,7 +141,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+    Location lastLocation;
     private void setLocation(Location location){
+        lastLocation = location;
         if(locationUpdateListener != null){
             locationUpdateListener.updateCurrentLocation(location);
         }

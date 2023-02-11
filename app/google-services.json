@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "97264335721",
+    "firebase_url": "https://geekdubai-99f22.firebaseio.com",
+    "project_id": "geekdubai-99f22",
+    "storage_bucket": "geekdubai-99f22.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:97264335721:android:0377f65495deb35a585bf8",
+        "android_client_info": {
+          "package_name": "c0868747.tilak.labtest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "97264335721-a63pn3n64fn2ba2ogtddan7u6bfs66fi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYQ_jsKx3zW8N1FmVXvziGz4TlTLqFnkE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "97264335721-a63pn3n64fn2ba2ogtddan7u6bfs66fi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

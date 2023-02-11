@@ -5,7 +5,9 @@ import androidx.room.PrimaryKey;
 
 import java.io.Serializable;
 
+
 @Entity(tableName = "fav_places")
+@kotlinx.serialization.Serializable
 public class FavLocation implements Serializable {
     @PrimaryKey(autoGenerate = true)
     private int id;
@@ -61,6 +63,9 @@ public class FavLocation implements Serializable {
 
     public void setCreateTime(long createTime) {
         this.createTime = createTime;
+    }
+
+    public FavLocation() {
     }
 
     public FavLocation(int id, double lat, double lng, String title, String description, long createTime) {
