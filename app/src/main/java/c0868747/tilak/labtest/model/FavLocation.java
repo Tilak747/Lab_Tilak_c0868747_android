@@ -3,8 +3,10 @@ package c0868747.tilak.labtest.model;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.io.Serializable;
+
 @Entity(tableName = "fav_places")
-public class FavLocation {
+public class FavLocation implements Serializable {
     @PrimaryKey(autoGenerate = true)
     private int id;
     private double lat;

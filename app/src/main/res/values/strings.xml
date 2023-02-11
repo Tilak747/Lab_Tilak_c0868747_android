@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Lab_Tilak_c0868747_android</string>
+
+    <string name="google_map_api">AIzaSyBLrn9FoAG6EukNf1ftZquooY92axtUT8M</string>
+
+    <string name="permission_warning">Permission is required</string>
+    <string name="setting">Settings</string>
 </resources>

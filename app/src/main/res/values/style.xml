@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="MyTextButton" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="MyTextButton.Options">
+        <item name="textAllCaps">false</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="iconTint">@null</item>
+        <item name="iconPadding">12dp</item>
+        <item name="iconSize">24dp</item>
+        <item name="iconGravity">start</item>
+    </style>
+
+    <style name="MySearchInput" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="boxBackgroundMode">outline</item>
+    </style>
+
+</resources>
